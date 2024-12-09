@@ -3,6 +3,8 @@ import CardDataStats from '../../components/CardDataStats';
 import ChartOne from '../../components/Charts/ChartOne';
 import ChartThree from '../../components/Charts/ChartThree';
 import ChartTwo from '../../components/Charts/ChartTwo';
+import ChartFour from '../../components/Charts/ChartFour';
+import ChartFive from '../../components/Charts/ChartFive';
 // import MapOne from '../../components/Maps/MapOne';
 
 
@@ -60,6 +62,8 @@ const ECommerce: React.FC = () => {
         <ChartOne />
         <ChartTwo />
         <ChartThree />
+        <ChartFour />
+        <ChartFive />
         {/* <MapOne /> */}
       </div>
     </>
