@@ -11,7 +11,7 @@ function Header() {
         <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse max-md:mt-2 max-md:mb-6">
           <img
             src={logo}
-            alt="StartupSprint Logo"
+            alt="Main Logo"
             width={64}
             height={64}
           />

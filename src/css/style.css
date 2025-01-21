@@ -213,3 +213,7 @@ span.flatpickr-weekday,
 [x-cloak] {
   display: none !important;
 }
+
+.shadow-blue {
+  box-shadow: 0px 4px 4px #1836b2;
+}

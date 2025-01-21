@@ -3,8 +3,6 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 
 import Loader from './common/Loader';
 import PageTitle from './components/PageTitle';
-import SignIn from './pages/Authentication/SignIn';
-import SignUp from './pages/Authentication/SignUp';
 import Calendar from './pages/Calendar';
 import Chart from './pages/Chart';
 import ECommerce from './pages/Dashboard/ECommerce';
@@ -18,6 +16,8 @@ import Buttons from './pages/UiElements/Buttons';
 import Agents from "./pages/Agents";
 import Properties from "./pages/Properties";
 import Home from './pages/Home/Home';
+import LoginPage from './pages/Login/Login';
+import SignUp from './pages/Signup/Signup';
 import DefaultLayout from './layout/DefaultLayout';
 
 function App() {
@@ -43,6 +43,24 @@ function App() {
           <>
             <PageTitle title="Home | Mass Reporting App" />
             <Home />
+          </>
+        }
+      />
+      <Route
+        path="/login"
+        element={
+          <>
+            <PageTitle title="Login | Mass Reporting App" />
+            <LoginPage/>
+          </>
+        }
+      />
+      <Route
+        path="/signup"
+        element={
+          <>
+            <PageTitle title="Signup | Mass Reporting App" />
+            <SignUp/>
           </>
         }
       />
@@ -158,24 +176,6 @@ function App() {
                   <>
                     <PageTitle title="Buttons | Interactive Elements" />
                     <Buttons />
-                  </>
-                }
-              />
-              <Route
-                path="auth/signin"
-                element={
-                  <>
-                    <PageTitle title="Sign In | Access Your Account" />
-                    <SignIn />
-                  </>
-                }
-              />
-              <Route
-                path="auth/signup"
-                element={
-                  <>
-                    <PageTitle title="Sign Up | Create an Account" />
-                    <SignUp />
                   </>
                 }
               />

@@ -174,7 +174,7 @@ const Text: FC = () => {
         initial={{ y: 48, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ ease: "easeInOut", duration: 0.75, delay: 0.25 }}
-        className="text-lg text-gray-700 dark:text-gray-300 mb-10"
+        className="text-lg text-gray-700 dark:text-gray-300 mb-8"
       >
         Leverage the power of AI and real-time image processing to report traffic violations instantly. Our secure, cloud-based platform ensures accurate evidence validation and seamless scaling, promoting safer roads for everyone.
       </motion.p>
@@ -184,7 +184,7 @@ const Text: FC = () => {
         transition={{ ease: "easeInOut", duration: 0.75, delay: 0.5 }}
       >
         <button
-          className="text-white dark:text-black dark:bg-[#e7c94d] dark:hover:bg-white dark:hover:text-black bg-[#0056D2] hover:bg-white hover:text-[#0056D2] hover:border-[#0056D2] dark:hover:border-[#e7c94d] px-4 py-2 rounded-md border-2 border-transparent"
+          className="font-bold text-white bg-[#0056D2] hover:bg-white hover:text-[#0056D2] hover:border-[#0056D2] dark:hover:border-[#e7c94d] px-4 py-2 rounded-md border-2 border-transparent"
         >
           Join Us
         </button>
