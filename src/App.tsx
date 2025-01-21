@@ -18,6 +18,7 @@ import Properties from "./pages/Properties";
 import Home from './pages/Home/Home';
 import LoginPage from './pages/Login/Login';
 import SignUp from './pages/Signup/Signup';
+import RequestPage from './pages/instructions/RequestPending';
 import DefaultLayout from './layout/DefaultLayout';
 
 function App() {
@@ -61,6 +62,15 @@ function App() {
           <>
             <PageTitle title="Signup | Mass Reporting App" />
             <SignUp/>
+          </>
+        }
+      />
+      <Route
+        path="/requestpending"
+        element={
+          <>
+            <PageTitle title="Request Pending | Mass Reporting App" />
+            <RequestPage/>
           </>
         }
       />

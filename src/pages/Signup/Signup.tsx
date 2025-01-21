@@ -2,6 +2,7 @@ import React, { useState, ChangeEvent, FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 import logo from '/images/logo.png';
+import { signUpUser } from '../../utils/userauth';
 
 interface FormData {
   name: string;
@@ -37,16 +38,27 @@ const SignUp: React.FC = () => {
     }));
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
     if (formData.password !== formData.confirmPassword) {
-      alert('Passwords do not match. Please check and try again.');
+      alert("Passwords do not match. Please check and try again.");
       return;
     }
 
-    console.log('Sign-up successful:', formData);
-    navigate('/dashboard');
+    try {
+      await signUpUser(
+        formData.name,
+        formData.email,
+        formData.password,
+        formData.organization,
+        formData.agentId,
+        formData.location
+      );
+      navigate("/requestpending");
+    } catch (error: any) {
+      alert(`Error: ${error.message}`);
+    }
   };
 
   return (
