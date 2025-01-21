@@ -34,26 +34,31 @@ const LoginPage: React.FC = () => {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     const { email, password } = formData;
-
+  
     const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
     if (!emailPattern.test(email)) {
       setError('Please enter a valid email address.');
       return;
     }
-
+  
     setLoading(true);
     setError(null);
-
-    // Simulate login process
+  
+    // Admin credentials
+    const adminEmail = 'admin@usman.com'; 
+    const adminPassword = 'admin123';
+  
     setTimeout(() => {
       setLoading(false);
-      if (email === 'user@example.com' && password === 'password') {
+  
+      if (email === adminEmail && password === adminPassword) {
+        // Redirect to the dashboard if admin credentials match
         navigate('/dashboard');
       } else {
         setError('Invalid credentials, please try again.');
       }
     }, 1000);
-  };
+  };  
 
   return (
     <div className="flex flex-col justify-center items-center h-screen w-screen bg-white text-black ">

@@ -19,6 +19,7 @@ import Home from './pages/Home/Home';
 import LoginPage from './pages/Login/Login';
 import SignUp from './pages/Signup/Signup';
 import RequestPage from './pages/instructions/RequestPending';
+import Requests from './pages/Requests';
 import DefaultLayout from './layout/DefaultLayout';
 
 function App() {
@@ -123,6 +124,15 @@ function App() {
                   <>
                     <PageTitle title="Properties | View and Manage Land" />
                     <Properties />
+                  </>
+                }
+              />
+              <Route
+                path="requests"
+                element={
+                  <>
+                    <PageTitle title="Requests | View and Manage Land" />
+                    <Requests />
                   </>
                 }
               />

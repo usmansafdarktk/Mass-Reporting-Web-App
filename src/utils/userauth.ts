@@ -11,20 +11,27 @@ const db = getFirestore(app);
  * @param name Full name of the user
  * @param email Email address of the user
  * @param password Password for the account
+ * @param confirmPassword Confirmation of the password
+ * @param phoneNumber User's phone number
+ * @param role User's role
  * @param organization User's organization
- * @param agentId Agent ID of the user
- * @param location User's location
  * @returns Promise<void>
  */
 export const signUpUser = async (
   name: string,
   email: string,
   password: string,
-  organization: string,
-  agentId: string,
-  location: string
+  confirmPassword: string,
+  phoneNumber: string,
+  role: string,
+  organization: string
 ): Promise<void> => {
   try {
+    // Check if passwords match
+    if (password !== confirmPassword) {
+      throw new Error("Passwords do not match.");
+    }
+
     // Create a new user with email and password
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
 
@@ -38,9 +45,9 @@ export const signUpUser = async (
     await setDoc(userDoc, {
       name,
       email,
+      phoneNumber,
+      role,
       organization,
-      agentId,
-      location,
       verified: false, // Default value for verified
       createdAt: new Date().toISOString(),
     });
