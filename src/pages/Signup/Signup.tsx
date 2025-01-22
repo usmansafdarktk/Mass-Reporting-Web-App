@@ -93,7 +93,7 @@ const SignUp: React.FC = () => {
                 type="text"
                 id="name"
                 name="name"
-                placeholder="e.g., Ayesha Khan"
+                placeholder="e.g., Aslam Ahmad"
                 value={formData.name}
                 onChange={handleChange}
                 className="px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 w-full bg-white border-gray-300"
@@ -108,7 +108,7 @@ const SignUp: React.FC = () => {
                 type="email"
                 id="email"
                 name="email"
-                placeholder="e.g., ayesha.khan@example.com"
+                placeholder="e.g., aslam.ahmad@example.com"
                 value={formData.email}
                 onChange={handleChange}
                 className="px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 w-full bg-white border-gray-300"
@@ -179,7 +179,7 @@ const SignUp: React.FC = () => {
                 type="text"
                 id="role"
                 name="role"
-                placeholder="e.g., Manager"
+                placeholder="e.g., Inspector"
                 value={formData.role}
                 onChange={handleChange}
                 className="px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 w-full bg-white border-gray-300"
@@ -194,7 +194,7 @@ const SignUp: React.FC = () => {
                 type="text"
                 id="organization"
                 name="organization"
-                placeholder="e.g., Tech Solutions Pvt Ltd"
+                placeholder="e.g., Regional Crime Cell"
                 value={formData.organization}
                 onChange={handleChange}
                 className="px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 w-full bg-white border-gray-300"

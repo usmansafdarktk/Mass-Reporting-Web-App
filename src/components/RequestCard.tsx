@@ -11,7 +11,7 @@ interface RequestCardProps {
 
 const RequestCard: React.FC<RequestCardProps> = ({ name, email, role, organization, onAccept, onReject }) => {
   return (
-    <div className="p-4 border rounded-md shadow-sm bg-white flex justify-between items-center">
+    <div className="p-4 border rounded-md bg-white flex justify-between items-center shadow-[0px_0px_4px_rgba(24,54,178,1)]">
       <div>
         <h3 className="text-lg font-semibold text-black">{name}</h3>
         <p className="text-gray-600">{email}</p>

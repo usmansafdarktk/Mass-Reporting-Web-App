@@ -20,6 +20,7 @@ import LoginPage from './pages/Login/Login';
 import SignUp from './pages/Signup/Signup';
 import RequestPage from './pages/instructions/RequestPending';
 import Requests from './pages/Requests';
+import AddAgent from './pages/AddAgent';
 import DefaultLayout from './layout/DefaultLayout';
 
 function App() {
@@ -133,6 +134,15 @@ function App() {
                   <>
                     <PageTitle title="Requests | View and Manage Land" />
                     <Requests />
+                  </>
+                }
+              />
+              <Route
+                path="addagent"
+                element={
+                  <>
+                    <PageTitle title="Add Agent| View and Manage Land" />
+                    <AddAgent />
                   </>
                 }
               />

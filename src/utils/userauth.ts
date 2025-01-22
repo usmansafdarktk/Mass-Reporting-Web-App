@@ -1,4 +1,4 @@
-import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, updateProfile, signInWithEmailAndPassword } from "firebase/auth";
 import { getFirestore, doc, setDoc } from "firebase/firestore";
 import { app } from "./firebaseConfig"; // Ensure firebaseConfig is correctly exported
 
@@ -55,6 +55,23 @@ export const signUpUser = async (
     console.log("User signed up and data stored successfully.");
   } catch (error: any) {
     console.error("Error signing up user:", error.message);
+    throw new Error(error.message);
+  }
+};
+
+
+/**
+ * Logs in a user using Firebase Authentication.
+ * @param email User's email
+ * @param password User's password
+ * @returns Promise<void>
+ */
+export const signInUser = async (email: string, password: string): Promise<void> => {
+  try {
+    await signInWithEmailAndPassword(auth, email, password);
+    console.log("User logged in successfully.");
+  } catch (error: any) {
+    console.error("Error logging in user:", error.message);
     throw new Error(error.message);
   }
 };
