@@ -35,19 +35,27 @@ const LoginPage: React.FC = () => {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     const { email, password } = formData;
-
+  
     setLoading(true);
     setError(null);
-
+  
     try {
+      // Check for admin credentials
+      if (email === "admin@usman.com" && password === "admin123") {
+        navigate("/dashboard"); // Admin dashboard
+        return;
+      }
+  
+      // Proceed with normal login for other users
       await signInUser(email, password);
-      navigate("/dashboard"); // Redirect to dashboard on successful login
+      navigate("/userdashboard"); // User dashboard
     } catch (err: any) {
       setError(err.message || "Login failed. Please try again.");
     } finally {
       setLoading(false);
     }
   };
+  
 
   return (
     <div className="flex flex-col justify-center items-center h-screen w-screen bg-white text-black">

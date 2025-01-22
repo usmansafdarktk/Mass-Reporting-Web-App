@@ -22,6 +22,8 @@ import RequestPage from './pages/instructions/RequestPending';
 import Requests from './pages/Requests';
 import AddAgent from './pages/AddAgent';
 import DefaultLayout from './layout/DefaultLayout';
+import UserLayout from './layout/UserLayout';
+import UserReports from './pages/UserDashboard/UserReports';
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -211,6 +213,26 @@ function App() {
               />
             </Routes>
           </DefaultLayout>
+        }
+      />
+
+      {/* Other pages inside DefaultLayout */}
+      <Route
+        path="/*"
+        element={
+          <UserLayout>
+            <Routes>
+              <Route
+                path="userdashboard"
+                element={
+                  <>
+                    <PageTitle title="User Dashboard | Mass Reporting App" />
+                    <UserReports />
+                  </>
+                }
+              />
+            </Routes>
+          </UserLayout>
         }
       />
     </Routes>
